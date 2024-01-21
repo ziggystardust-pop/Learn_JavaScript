@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+    <script>
+
+
+        function func(){
+            function func2(){
+                alert("fun2");
+            }
+            return func2;
+        }
+        a = func();
+        console.log(a);
+        //输出：ƒ func2(){
+            //     alert("fun2");
+            // }
+        // a();//调用fun2
+        console.log("test live server");
+
+
+        // //让函数只调用一次，用（）包围匿名函数表示匿名函数是一个整体就不会报错
+        // (function(){//本身是函数对象
+        //     console.log("只调用一次的匿名函数");
+        // })();//后面加（）调用函数（立即执行函数）
+
+        // console.log("测试自动保存");
+
+
+        // //method 对象的函数属性
+        // var obj = new Object();
+        // obj.name = "test user";
+        // obj.func = function(){
+        //     console.log("method test");
+        // };
+        // obj.func();
+        // //箭头函数
+        // (()=>{
+        //     console.log("=>");
+        // })();
+        // let func3 = ()=>console.log("=>");
+        
+        // console.log(typeof func3);
+        // func3();
+        // //箭头函数的参数
+        // //函数中的参数可以定义默认值
+        // const fn = (a)=>{
+        //     console.log(a);
+
+        // };//只有一个参数时（）可以省略
+        // fn(a = 3);
+
+
+
+        function test(a) {
+            a = {};//已经指向新的对象
+            a.name = "test";
+            console.log(a);
+        }
+        let obj = {name :"t"} ;
+        test(obj);
+        console.log(obj);
+
+
+
+        const sum = (a,b)=>a+b;
+        const fn = () => ({test:"test"});
+        res = fn();
+        console.log(res);
+         
+    </script>
+</body>
+
+</html>
