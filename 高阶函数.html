@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 回调函数通常使用匿名函数
+        /*
+                高阶函数
+        - 如果一个函数的参数或返回值是函数，则这个函数就称为高阶函数
+        - 为什么要将函数作为参数传递? (回调函数有什么作用?)
+        - 将函数作为参数，意味着可以对另一个函数动态的传递代码
+        
+        */
+        // function filter(arr, callback) {
+        //     const newarr = [];
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (callback(arr[i]))
+        //             newarr.push(arr[i]);
+        //     }
+        //     return newarr;
+        // }
+        // const arr = [1, 2, 3, 4, 5, 6];
+        // let res = filter(arr, a => a % 2 === 0);
+        // console.log(res);
+        // // 返回值为函数：
+
+        /*
+
+
+        */
+       function fn(){
+         return "hello";
+
+        }
+       function outer(cb){
+        return ()=>{
+            // 调用回调函数
+            const res = cb();
+            return res;//将函数的返回值作为返回函数的返回值
+        }//返回匿名箭头函数
+       }
+       let res = outer(fn);
+       console.log(res);
+       let message = res();
+       console.log(message);
+
+       
+    </script>
+</body>
+
+</html>
